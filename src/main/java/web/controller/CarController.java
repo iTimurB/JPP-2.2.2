@@ -10,7 +10,8 @@ import web.service.CarServiceImpl;
 public class CarController {
 
     @GetMapping(value = "/cars")
-    public String printCar(@RequestParam(value = "count", required = false) int count, ModelMap model) {
+    public String printCar(@RequestParam(defaultValue = "5") int count, ModelMap model) {
+
         if (count >= 5) {
             count = 5;
         }
